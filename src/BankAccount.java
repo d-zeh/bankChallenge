@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.Random;
+
 public class BankAccount {
         double checkingBalance;
         double savingsBalance;
@@ -60,10 +63,15 @@ public class BankAccount {
     }
 
 
-    String accountNumber;
+    int[] accountNumber = new int[10];
 
         private String createAccountNumber() {
-
+            Random random = new Random();
+            for (int i = 0; i < 10; i++) {
+                int digit = random.nextInt(10);
+                accountNumber[i] = digit;
+            }
+            return "Your account number is " + accountNumber;
         }
 
 
